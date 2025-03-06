@@ -1,10 +1,9 @@
-import type { Metadata } from "next";
-import "./globals.css";
+'use client';
 
-export const metadata: Metadata = {
-  title: "Expense Tracker",
-  description: "Track your expenses for free!",
-};
+import "./globals.css";
+import { ApolloProvider } from "@apollo/client";
+import { client } from "./utils/apollo-client";
+
 
 export default function RootLayout({
   children,
@@ -14,7 +13,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        <ApolloProvider client={client}>
+          {children}
+        </ApolloProvider>
       </body>
     </html>
   );

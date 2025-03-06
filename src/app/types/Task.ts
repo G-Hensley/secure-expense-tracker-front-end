@@ -3,5 +3,4 @@ export type Task = {
     description: string;
     category: string;
     amount: number;
-    completed: boolean;
 };

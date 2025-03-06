@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function Expense( { description, amount, handleDeleteExpense, id, handleDescriptionChange, handleAmountChange }: 
     { description: string, amount: number, handleDeleteExpense: (id: number) => void, id: number, handleDescriptionChange: 
-    (id: number, description: string) => void, handleAmountChange: (id: number, amount: number) => void } ) {
+    (id: number, description: string) => void, handleAmountChange: (id: number, amount: number, ) => void } ) {
 
     const [isEditing, setIsEditing] = useState(false);
     const [editedDescription, setEditedDescription] = useState(description);
