@@ -54,9 +54,9 @@ export default function Expense( { description, amount, handleDeleteExpense, id,
                     {isEditing ? (
                         <div className="flex gap-2">
                             <button aria-label="Save edit" className='font-mono self-center w-fit cursor-pointer bg-green-900 text-white text-md px-2 py-1 rounded-lg hover:opacity-60 
-                        transition-all duration-300 active:scale-95' onClick={saveEdit}>Save</button>
+                        transition-all duration-300 active:scale-95' onClick={saveEdit}>SAVE</button>
                             <button aria-label="Cancel edit" className='font-mono self-center w-fit cursor-pointer bg-red-900 text-white text-md px-2 py-1 rounded-lg hover:opacity-60 
-                        transition-all duration-300 active:scale-95' onClick={cancelEdit}>Cancel</button>
+                        transition-all duration-300 active:scale-95' onClick={cancelEdit}>CANCEL</button>
                         </div>
                     ): (
                         <button aria-label="Edit" className="cursor-pointer active:scale-80 transition-all duration-200 hover:scale-120 hover:opacity-60" onClick={startEdit}>

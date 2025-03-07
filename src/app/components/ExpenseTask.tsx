@@ -33,7 +33,6 @@ export default function ExpenseTask({
         description: description,
         category: finalCategory,
         amount: amount,
-        completed: false,
       });
 
       setDescription('');
