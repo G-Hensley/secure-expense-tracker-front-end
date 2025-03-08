@@ -40,7 +40,7 @@ export default function Expense( { description, amount, handleDeleteExpense, id,
                         <h2 className="text-lg max-w-72 font-bold px-2 outline-none break-words" spellCheck={false}>{description == "" ? "Description" : description}</h2>
                     )}
                     {isEditing ? (
-                        <input maxLength={10} aria-label="Edit amount" type="number" className="text-lg px-2 outline-none w-auto text-nowrap" spellCheck={false} 
+                        <input max={9999999999} aria-label="Edit amount" type="number" className="text-lg px-2 outline-none w-auto text-nowrap" spellCheck={false} 
                         contentEditable={isEditing} onChange={(e) => setEditedAmount(Number(e.target.value))} onKeyDown={(e) => {
                         if (e.key === 'Enter') {
                                 saveEdit();

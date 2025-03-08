@@ -117,7 +117,7 @@ export default function ExpenseTask({
               placeholder={amount === 0 ? 'Amount' : ''}
               value={amount === 0 ? '' : amount}
               onChange={(e) => setAmount(Number(e.target.value))}
-              maxLength={10}
+              max={9999999999}
             />
           </div>
           <button
