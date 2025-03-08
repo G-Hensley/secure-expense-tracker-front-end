@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { io } from "socket.io-client";
+import { io, Socket } from "socket.io-client";
 
 export const useWebSockets = () => {
-    const [socket, setSocket] = useState<any>(null);
+    const [socket, setSocket] = useState<Socket | null>(null);
 
     useEffect(() => {
         const newSocket = io('http://localhost:5700');
