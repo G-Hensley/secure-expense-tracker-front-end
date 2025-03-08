@@ -37,7 +37,7 @@ export default function Expense( { description, amount, handleDeleteExpense, id,
                         }} placeholder={description == "" ? "Description" : description}
                         value={editedDescription}/>
                     ) : (
-                        <h2 className="text-lg font-bold px-2 outline-none w-auto" spellCheck={false}>{description == "" ? "Description" : description}</h2>
+                        <h2 className="text-lg max-w-72 font-bold px-2 outline-none break-words" spellCheck={false}>{description == "" ? "Description" : description}</h2>
                     )}
                     {isEditing ? (
                         <input aria-label="Edit amount" type="number" className="text-lg px-2 outline-none w-auto text-nowrap" spellCheck={false} 
