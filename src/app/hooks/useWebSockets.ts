@@ -5,7 +5,7 @@ export const useWebSockets = () => {
     const [socket, setSocket] = useState<Socket | null>(null);
 
     useEffect(() => {
-        const newSocket = io('http://localhost:5700');
+        const newSocket = io(process.env.NEXT_PUBLIC_API_URL || '');
         setSocket(newSocket);
         
         return () => {
