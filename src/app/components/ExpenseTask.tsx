@@ -68,6 +68,7 @@ export default function ExpenseTask({
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               required
+              maxLength={50}
               aria-required='true'
             />
           </div>
@@ -100,6 +101,7 @@ export default function ExpenseTask({
                 onChange={(e) => setNewCategory(e.target.value)}
                 required
                 aria-required='true'
+                maxLength={50}
               />
             )}
           </div>
@@ -115,6 +117,7 @@ export default function ExpenseTask({
               placeholder={amount === 0 ? 'Amount' : ''}
               value={amount === 0 ? '' : amount}
               onChange={(e) => setAmount(Number(e.target.value))}
+              maxLength={10}
             />
           </div>
           <button

@@ -29,7 +29,7 @@ export default function Expense( { description, amount, handleDeleteExpense, id,
             <div className="flex flex-col gap-4 py-6 px-4 items-center justify-between expense-card w-full">
                 <div className="flex gap-4 sm:flex-none justify-between w-full">
                     {isEditing ? (
-                        <input aria-label="Edit description" type="text" className="text-lg font-bold px-2 outline-none w-auto text-nowrap" spellCheck={false} 
+                        <input maxLength={50} aria-label="Edit description" type="text" className="text-lg font-bold px-2 outline-none w-auto text-nowrap" spellCheck={false} 
                         contentEditable={isEditing} autoFocus={isEditing} onChange={(e) => setEditedDescription(e.target.value)} onKeyDown={(e) => {
                         if (e.key === 'Enter') {
                             saveEdit();
@@ -40,7 +40,7 @@ export default function Expense( { description, amount, handleDeleteExpense, id,
                         <h2 className="text-lg max-w-72 font-bold px-2 outline-none break-words" spellCheck={false}>{description == "" ? "Description" : description}</h2>
                     )}
                     {isEditing ? (
-                        <input aria-label="Edit amount" type="number" className="text-lg px-2 outline-none w-auto text-nowrap" spellCheck={false} 
+                        <input maxLength={10} aria-label="Edit amount" type="number" className="text-lg px-2 outline-none w-auto text-nowrap" spellCheck={false} 
                         contentEditable={isEditing} onChange={(e) => setEditedAmount(Number(e.target.value))} onKeyDown={(e) => {
                         if (e.key === 'Enter') {
                                 saveEdit();
