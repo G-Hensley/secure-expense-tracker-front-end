@@ -17,15 +17,39 @@ export default function ExpenseTask({
   const [category, setCategory] = useState('');
   const [amount, setAmount] = useState(0);
   const [newCategory, setNewCategory] = useState('');
+  const [amountError, setAmountError] = useState('');
 
   const handleCreateNewExpense = () => {
     setCreateNewExpense((prev) => !prev);
+  };
+
+  const validateAmount = (value: number) => {
+    if (value < 0) {
+      setAmountError('Amount cannot be negative');
+      return false;
+    }
+    if (value > 9999999999) {
+      setAmountError('Amount is too large');
+      return false;
+    }
+    setAmountError('');
+    return true;
+  };
+
+  const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = Number(e.target.value);
+    setAmount(value);
+    validateAmount(value);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     const finalCategory = category === 'new' ? newCategory : category;
+
+    if (!validateAmount(amount)) {
+      return;
+    }
 
     if (description !== '' && finalCategory !== '' && amount !== 0) {
       handleCreateExpense({
@@ -39,10 +63,10 @@ export default function ExpenseTask({
       setCategory('');
       setNewCategory('');
       setAmount(0);
+      setAmountError('');
 
       setCreateNewExpense((prev) => !prev);
     }
-    
   };
 
   return (
@@ -83,7 +107,9 @@ export default function ExpenseTask({
               onChange={(e) => setCategory(e.target.value)}
               required
               aria-required='true'>
-              <option aria-label='Select a category' value=''>Select a category</option>
+              <option aria-label='Select a category' value=''>
+                Select a category
+              </option>
               {categories.map((category) => (
                 <option aria-label={category} key={category} value={category}>
                   {category}
@@ -116,9 +142,21 @@ export default function ExpenseTask({
               min={0}
               placeholder={amount === 0 ? 'Amount' : ''}
               value={amount === 0 ? '' : amount}
-              onChange={(e) => setAmount(Number(e.target.value))}
+              onChange={handleAmountChange}
               max={9999999999}
+              maxLength={10}
+              aria-required='true'
+              aria-invalid={!!amountError}
+              aria-errormessage='amount-error'
             />
+            {amountError && (
+              <p
+                id='amount-error'
+                className='text-red-500 text-sm mt-1'
+                role='alert'>
+                {amountError}
+              </p>
+            )}
           </div>
           <button
             aria-label='Add expense'
