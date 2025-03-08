@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
 
 const link = new HttpLink({
-    uri: `${process.env.NEXT_PUBLIC_API_URL}/graphql`,
+    uri: 'https://expense-tracker-pro-f2d07b08189f.herokuapp.com/graphql',
 });
 
 export const client = new ApolloClient({
