@@ -49,3 +49,17 @@ The front-end is deployed on Vercel. To deploy your own version:
 4. Deploy using Vercel’s automatic deployment feature.
 
 The backend is deployed separately on Heroku (see the note below for details).
+
+Security Analysis
+
+[To be added by Brenda Hensley]
+
+This section is reserved for the security analysis and test results currently being prepared.
+Contributing
+
+We welcome contributions! Feel free to fork the repository and submit pull requests to enhance the project.
+License
+
+This project is licensed under the MIT License.
+
+Note: This repository contains the front-end code. The backend, built with Node, Express, MongoDB, GraphQL, WebSockets, and Apollo Server, is hosted on Heroku and resides in a separate repository: [https://github.com/G-Hensley/secure-expense-tracker-back-end].
