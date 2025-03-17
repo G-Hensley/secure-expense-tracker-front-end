@@ -111,8 +111,8 @@ export default function Home() {
       </div>
       <p className="relative bottom-0 w-full mt-auto text-white text-sm text-center">
         © {new Date().getFullYear() + " "}
-        <a aria-label="Gavin Hensley's GitHub" href="https://github.com/G-Hensley" className="hover:underline">Gavin Hensley.</a> All rights reserved. Security tested by {` `}
-        <a aria-label="Brenda Hensley's GitHub" href="https://github.com/B-Hensley" className="hover:underline">Brenda Hensley.</a>
+        <a target="_blank" aria-label="Gavin Hensley's GitHub" href="https://github.com/G-Hensley" className="hover:underline">Gavin Hensley.</a> All rights reserved. Security tested by {` `}
+        <a target="_blank" aria-label="Brenda Hensley's GitHub" href="https://github.com/B-Hensley" className="hover:underline">Brenda Hensley.</a>
       </p>
     </main>
   );
