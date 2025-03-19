@@ -3,10 +3,10 @@
 A responsive web application for tracking expenses securely. Built with **Next.js, React.js, TypeScript,** and **TailwindCSS**, this front-end connects to a robust backend using **Node, Express, MongoDB, GraphQL, WebSockets**, and **Apollo Server** for real-time data synchronization.
 
 ----
-### ‼️ ATTENTION ‼️
-#### There are no user accounts for this application at the time of writing. 
-#### Please do ***NOT*** enter sensitive information. **Thank you!**
-----
+## ⚠️ **IMPORTANT NOTICE**  
+🚨 **At the time of writing, this application does not support user accounts.**  
+🚨 **Please DO NOT enter sensitive information.**  
+
 
 ## 📁 Folder Structure
 ```plaintext
