@@ -1,5 +1,7 @@
 'use client';
 
+import { GoogleAnalytics } from "@next/third-parties/google";
+
 import "./globals.css";
 import { ApolloProvider } from "@apollo/client";
 import { client } from "./utils/apollo-client";
@@ -16,6 +18,7 @@ export default function RootLayout({
         <ApolloProvider client={client}>
           {children}
         </ApolloProvider>
+        <GoogleAnalytics gaId="G-ML0ZLCJ5BS" />
       </body>
     </html>
   );
