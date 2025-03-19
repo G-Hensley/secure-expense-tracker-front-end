@@ -18,8 +18,8 @@ export default function RootLayout({
         <ApolloProvider client={client}>
           {children}
         </ApolloProvider>
-        <GoogleAnalytics gaId="G-ML0ZLCJ5BS" />
       </body>
+      <GoogleAnalytics gaId="G-ML0ZLCJ5BS" />
     </html>
   );
 }
