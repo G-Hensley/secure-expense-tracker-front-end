@@ -1,6 +1,6 @@
 import './Expense.css';
 import { CiEdit } from 'react-icons/ci';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Expense({
   description,
@@ -21,11 +21,19 @@ export default function Expense({
   const [editedDescription, setEditedDescription] = useState(description);
   const [editedAmount, setEditedAmount] = useState(amount);
 
+  useEffect(() => {
+    setEditedDescription(description);
+    setEditedAmount(amount);
+  }, [description, amount]);
+
   const startEdit = () => {
     setIsEditing(true);
   };
 
   const saveEdit = () => {
+    if (editedAmount < 0 || editedAmount > 9999999999) {
+      return;
+    }
     handleDescriptionChange(id, editedDescription);
     handleAmountChange(id, editedAmount);
     setIsEditing(false);
@@ -59,27 +67,29 @@ export default function Expense({
                   saveEdit();
                 }
               }}
-              placeholder={
-                description == '' ? 'Description' : editedDescription
-              }
               value={editedDescription}
             />
           ) : (
             <h2
               className='text-lg max-w-72 font-bold px-2 outline-none break-words'
               spellCheck={false}>
-              {description == '' ? 'Description' : description}
+              {description || 'Description'}
             </h2>
           )}
           {isEditing ? (
             <input
               max={9999999999}
+              min={0}
               aria-label='Edit amount'
               type='number'
               className='text-lg px-2 outline-none w-auto text-nowrap'
               spellCheck={false}
               contentEditable={isEditing}
-              onChange={(e) => setEditedAmount(Number(e.target.value))}
+              onChange={(e) => {
+                const value =
+                  e.target.value === '' ? 0 : Number(e.target.value);
+                setEditedAmount(value);
+              }}
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
                   saveEdit();
@@ -88,7 +98,7 @@ export default function Expense({
               value={editedAmount}
             />
           ) : (
-            <p className='text-lg mr-4'>${editedAmount}</p>
+            <p className='text-lg mr-4'>${amount}</p>
           )}
         </div>
         <div className='flex gap-4 w-fit'>
