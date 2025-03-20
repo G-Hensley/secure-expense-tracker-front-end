@@ -18,10 +18,14 @@ export default function Expense( { description, amount, handleDeleteExpense, id,
         handleDescriptionChange(id, editedDescription);
         handleAmountChange(id, editedAmount);
         setIsEditing(false);
+        setEditedDescription(description);
+        setEditedAmount(amount);
     }
 
     const cancelEdit = () => {
         setIsEditing(false);
+        setEditedDescription(description);
+        setEditedAmount(amount);
     }
 
     return (
@@ -35,7 +39,7 @@ export default function Expense( { description, amount, handleDeleteExpense, id,
                             saveEdit();
                         }
                         }} placeholder={description == "" ? "Description" : description}
-                        value={description}/>
+                        value={editedDescription}/>
                     ) : (
                         <h2 className="text-lg max-w-72 font-bold px-2 outline-none break-words" spellCheck={false}>{description == "" ? "Description" : description}</h2>
                     )}
@@ -47,7 +51,7 @@ export default function Expense( { description, amount, handleDeleteExpense, id,
                             }
                         }} placeholder={String(amount)} value={amount}/>
                     ) : (
-                        <p className="text-lg mr-4">${amount}</p>
+                        <p className="text-lg mr-4">${editedAmount}</p>
                     )}
                 </div>
                 <div className="flex gap-4 w-fit">
