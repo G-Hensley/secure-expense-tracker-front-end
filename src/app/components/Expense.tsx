@@ -18,8 +18,8 @@ export default function Expense( { description, amount, handleDeleteExpense, id,
         handleDescriptionChange(id, editedDescription);
         handleAmountChange(id, editedAmount);
         setIsEditing(false);
-        setEditedDescription(description);
-        setEditedAmount(amount);
+        setEditedDescription(editedDescription);
+        setEditedAmount(editedAmount);
     }
 
     const cancelEdit = () => {
@@ -49,7 +49,7 @@ export default function Expense( { description, amount, handleDeleteExpense, id,
                         if (e.key === 'Enter') {
                                 saveEdit();
                             }
-                        }} placeholder={String(amount)} value={amount}/>
+                        }} placeholder={String(amount)} value={editedAmount}/>
                     ) : (
                         <p className="text-lg mr-4">${editedAmount}</p>
                     )}
