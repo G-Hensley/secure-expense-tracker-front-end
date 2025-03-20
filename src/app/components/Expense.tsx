@@ -29,8 +29,6 @@ export default function Expense({
     handleDescriptionChange(id, editedDescription);
     handleAmountChange(id, editedAmount);
     setIsEditing(false);
-    setEditedDescription(description);
-    setEditedAmount(amount);
   };
 
   const cancelEdit = () => {
