@@ -35,7 +35,7 @@ export default function Expense( { description, amount, handleDeleteExpense, id,
                             saveEdit();
                         }
                         }} placeholder={description == "" ? "Description" : description}
-                        value={editedDescription}/>
+                        value={description}/>
                     ) : (
                         <h2 className="text-lg max-w-72 font-bold px-2 outline-none break-words" spellCheck={false}>{description == "" ? "Description" : description}</h2>
                     )}
@@ -45,7 +45,7 @@ export default function Expense( { description, amount, handleDeleteExpense, id,
                         if (e.key === 'Enter') {
                                 saveEdit();
                             }
-                        }} placeholder={String(amount)} value={editedAmount}/>
+                        }} placeholder={String(amount)} value={amount}/>
                     ) : (
                         <p className="text-lg mr-4">${amount}</p>
                     )}
