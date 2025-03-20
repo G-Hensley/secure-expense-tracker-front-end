@@ -131,7 +131,7 @@ export default function ExpenseTask({
               />
             )}
           </div>
-          <div className='flex flex-col gap-2 col-span-2 w-fit sm:w-1/3 text-center items-center'>
+          <div className='flex flex-col gap-2 col-span-2 w-full sm:w-1/3 text-center'>
             <label className='text-lg' htmlFor='amount'>
               Amount
             </label>
