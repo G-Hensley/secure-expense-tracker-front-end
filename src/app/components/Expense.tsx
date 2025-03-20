@@ -38,7 +38,7 @@ export default function Expense( { description, amount, handleDeleteExpense, id,
                         if (e.key === 'Enter') {
                             saveEdit();
                         }
-                        }} placeholder={description == "" ? "Description" : description}
+                        }} placeholder={description == "" ? "Description" : editedDescription}
                         value={editedDescription}/>
                     ) : (
                         <h2 className="text-lg max-w-72 font-bold px-2 outline-none break-words" spellCheck={false}>{description == "" ? "Description" : description}</h2>
@@ -49,7 +49,7 @@ export default function Expense( { description, amount, handleDeleteExpense, id,
                         if (e.key === 'Enter') {
                                 saveEdit();
                             }
-                        }} placeholder={String(amount)} value={editedAmount}/>
+                        }} placeholder={amount == 0 ? "Amount" : editedAmount.toString()}/>
                     ) : (
                         <p className="text-lg mr-4">${editedAmount}</p>
                     )}
