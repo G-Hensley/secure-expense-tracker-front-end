@@ -27,7 +27,7 @@ export default function Expense( { description, amount, handleDeleteExpense, id,
     return (
         <>
             <div className="flex flex-col gap-4 py-6 px-4 items-center justify-between expense-card w-full">
-                <div className="flex gap-4 sm:flex-none justify-between w-full">
+                <div className={`flex gap-4 sm:flex-none justify-between w-full ${isEditing ? 'flex-col' : ''}`}>
                     {isEditing ? (
                         <input maxLength={50} aria-label="Edit description" type="text" className="text-lg font-bold px-2 outline-none w-auto text-nowrap" spellCheck={false} 
                         contentEditable={isEditing} autoFocus={isEditing} onChange={(e) => setEditedDescription(e.target.value)} onKeyDown={(e) => {
